@@ -2,57 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/</loc>
-         <lastmod>2021-12-26</lastmod>
+         <lastmod>2022-12-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/about/</loc>
-         <lastmod>2021-12-26</lastmod>
+         <lastmod>2022-12-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/calculators/</loc>
-         <lastmod>2021-12-26</lastmod>
+         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/load_data/</loc>
+         <lastmod>2022-12-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/datasets/</loc>
-         <lastmod>2021-12-26</lastmod>
+         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/plot_settings/</loc>
+         <lastmod>2022-12-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/guidelines/</loc>
-         <lastmod>2021-12-26</lastmod>
+         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/quick_start/</loc>
+         <lastmod>2022-12-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/info/</loc>
-         <lastmod>2021-12-26</lastmod>
+         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/show_plot/</loc>
+         <lastmod>2022-12-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/parameters/</loc>
-         <lastmod>2021-12-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/plots/</loc>
-         <lastmod>2021-12-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/samples/</loc>
-         <lastmod>2021-12-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/stations/</loc>
-         <lastmod>2021-12-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/versions/</loc>
-         <lastmod>2021-12-26</lastmod>
+         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/version_history/</loc>
+         <lastmod>2022-12-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
