@@ -59,6 +59,10 @@
     <li class="toctree-l2"><a class="reference internal" href="#plot-properties">Plot Properties</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#marker-properties">Marker Properties</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#tooltips">Tooltips</a>
+    </li>
+        </ul>
     </li>
     </ul>
                     </li>
@@ -113,98 +117,36 @@
             <div class="section">
               
                 <h1 id="plot-settings">Plot Settings</h1>
-<p>This tab allows overwriting the automatically generated plot settings for the Piper diagram. The form is devided in the more general plot settings and the marker settings.</p>
-<p><img alt="Piper settings" src="../img/show_settings_piper01.png" title="Piper settings" /></p>
+<p>This tab allows overwriting the automatically generated plot settings for the Piper diagram. The form is divided into two major sections: the more general plot settings and the marker settings.</p>
+<p><img alt="" src="../img/show_settings_piper01.png" /></p>
 <h2 id="plot-properties">Plot Properties</h2>
 <p>In the plot properties sections, you may define the following parameters:</p>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Plot title</td>
-<td>Title for the plot. If no title is needed, leave the fields empty. For grouped plots, you may include the group-by parameter in curly braces. For each plot, this expression will be replaced by the code for which the plot uses the data.</td>
-</tr>
-<tr>
-<td>Plot title font size</td>
-<td>Size of title font in em.</td>
-</tr>
-<tr>
-<td>Plot title alignment</td>
-<td>Define whether the title should be left-, center- or right-aligned</td>
-</tr>
-<tr>
-<td>Group plots by</td>
-<td>if your data contains strings or integer values with a limited number of distinct<br>values, you may group the plots by such a field (e.g., station, geology, year, etc.).<br>One plot will be created for each distinct value in the selected data column</td>
-</tr>
-<tr>
-<td>Group Legend by</td>
-<td>Define the field that would be used to have distinct markers.</td>
-</tr>
-<tr>
-<td>Plot width</td>
-<td>Width of plot in points</td>
-</tr>
-<tr>
-<td>Show grid</td>
-<td>Show or hide the grid lines. Grid lines can be hidden if the target diagram is small.</td>
-</tr>
-<tr>
-<td>Show tick labels</td>
-<td>Show or hide the tick labels. Tick labels may be hidden if the target diagram is small</td>
-</tr>
-<tr>
-<td>Tick label font size</td>
-<td>Select a larger font in points if the diagram needs to be scaled down.</td>
-</tr>
-<tr>
-<td>Axis label font size</td>
-<td>Select a larger font in points if the diagram needs to be scaled down.</td>
-</tr>
-<tr>
-<td>Image output format</td>
-<td>Select png for a bitmap format and SVG for a vectorized output. The SVG format is scaleable but is not as widely supported as the png format.</td>
-</tr>
-</tbody>
-</table>
-<p>Note that plot by and legend by grouping can be used in combination but different fields should be applied to each grouping. When using the same group field, each plot will contain only one marker.</p>
+<p><strong>Plot Title:</strong> Allows setting a title for the plot. If no title is required, the fields can be left empty. For grouped plots, the user may include the <code>group-legend-by</code>-parameter-name in curly braces. For each plot, this expression will be replaced by the code for which the plot uses the data. |</p>
+<p><strong>Plot Title Font Size:</strong> Size of title font in em.</p>
+<p><strong>Plot Title Alignment:</strong> Define whether the title should be left-, center- or right-aligned.</p>
+<p><strong>Group plots by:</strong> If your data contains strings or integer values with a limited number of distinct values, you may group the plots by such a field (e.g., station, geology, year, etc.). One plot will be created for each distinct value in the selected data column.</p>
+<p><strong>Group Legend by:</strong> Define the field that would be used to appear in the legend with distinct markers. For example, if you select the station column in the demo dataset, each station will be represented with a distinct marker.</p>
+<p><strong>Plot Width:</strong> Width of plot in points.</p>
+<p><strong>Show Grid:</strong> Show or hide the grid lines. Grid lines can be hidden if the target diagram is small. |
+<strong>Show Tick Labels:</strong> Show or hide the tick labels. Tick labels may be hidden if the target diagram is small.</p>
+<p><strong>Tick Label Font Size:</strong> Select a larger font in points if the diagram needs to be scaled down.</p>
+<p><strong>Axis Label Font Size:</strong> Select a larger font in points if the diagram needs to be scaled down.</p>
+<p><strong>Image Output Format</strong> Select png for a bitmap format and SVG for a vectorized output. The SVG format is scaleable but is not as widely supported as the png format.</p>
+<p>Note that plot by and legend by grouping can be used in combination, but different fields should be applied to each grouping. When using the same group field, each plot will contain only one marker.</p>
 <h2 id="marker-properties">Marker Properties</h2>
-<p>Fontus offers a wide range of symbols and colors to render the data on the plot:</p>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Marker size</td>
-<td></td>
-</tr>
-<tr>
-<td>Marker color palette</td>
-<td></td>
-</tr>
-<tr>
-<td>Marker generator algorithm</td>
-<td></td>
-</tr>
-<tr>
-<td>Marker fill opacity</td>
-<td></td>
-</tr>
-<tr>
-<td>Marker types</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>Fontus plots are interactive; when hovering over markers, the corresponding data can be displayed in tooltips. In the tooltip section, you may narrow down which values would be displayed to prevent the tooltip from becoming overly overwhelming. Each field listed can be disabled. Note that the number of digits to be used in the tooltips is defined in the <code>Load data</code> section.</p>
+<p>Markers are defined by the basic properties of type (circle, square, triangle, etc.), color, and size. </p>
+<p><strong>Marker Size:</strong> size of the marker in points. All markers have the same size.</p>
+<p><strong>Marker Color Palette:</strong>: Colors are assigned to markers through color palettes containing a list of colors. Fontus uses the <a href="https://docs.bokeh.org/en/latest/docs/reference/palettes.html">palettes</a> of the <a href="https://bokeh.org/">Bokeh</a> graphic library, used to render the Piper diagram. After selecting a palette, the selected palette is previewed below the selectbox.</p>
+<p><strong>Number of Colors:</strong>: Most palettes include 11 or more colors. If marker colors are generated by cycling through the palette, fewer colors may be more convenient. The field <code>Number of Colors</code> can be used to limit the number of colors used from the defined palette.</p>
+<p><strong>Default Color:</strong> If the user does not select a <code>Group Legend By</code> option, all data points are rendered using the same marker. Fontus uses the first marker type for the used symbol and the <code>Default Color</code> for the color of the default marker.</p>
+<p><strong>Marker Generator Algorithm:</strong>: When selecting the <code>Group Legend By</code> option, markers are generated automatically by alternating the symbol and/or colors of each marker. The user may choose between three generators: 
+- Cycle through marker types (circle, square, etc.) first using the first color of the palette. When the last symbol type is reached, use the next color and restart from the first marker type.
+- Cycle through color type first using the first marker type of the marker-type list. When the last color is reached, use the next marker type and restart from the first color.
+- Cycle through color and marker types simultaneously. The number of marker types and colors should be equal. Make sure, for this mode, that there are no more codes to be represented than color/marker types available, as otherwise, there will be identical markers for different codes.</p>
+<p><img alt="" src="../img/plot_settings02.png" /></p>
+<h3 id="tooltips">Tooltips</h3>
+<p>When hovering over points on the plot, a tooltip will show information about the selected point. In this section, the user can define which fields to display in the tooltip box. For major ions, the user can specify whether values should be listed as mg/L (original concentration from the data file), meq/L, or meq%. Values expressed in meq% are smaller than mg/L-concentrations. Therefore the user may also specify the number of digits used for major ions concentrations.</p>
+<p><img alt="" src="../img/plot_settings03.png" /></p>
               
             </div>
           </div>

@@ -110,13 +110,13 @@
               
                 <h1 id="show-plot">Show Plot</h1>
 <p>The plot is rerendered after each change in the data or plot settings. The plot view contains the following elements:</p>
-<p><img alt="Piper settings" src="../img/show_plot_piper01.png" title="Piper settings" /></p>
+<p><img alt="" src="../img/show_plot_piper01.png" /></p>
 <p><strong>1) Filters:</strong>
-Each field marked as group-by in the data_load section apperas a multiselect box widget. When selecting on or several codes from the list, the data for the plot will be reduced to samples matching this code.</p>
+Each field marked as <code>group-by</code> in the <code>Data Load</code> section appears as a multi-select box widget in the sidebar. When selecting one or several codes from the list, the data for the plot will be reduced to samples matching this code.</p>
 <p><strong>2) Diagram:</strong>
-The diagram shown in this box is interactive, when clicking on markers, the corrsponding values will be shown in a tooltip box. In order to define which values from the dataset are shown in the toolbox, use the tooltip section in the <code>plot settings</code>.</p>
+The diagram in this box is interactive; when clicking on markers, the corresponding values will be shown in a tooltip box. In order to define which values from the dataset are shown in the toolbox, use the tooltip section in the <a href="../plot_settings/#tooltips">Plot Settings</a>.</p>
 <p><strong>3) Bokeh toolbox</strong>
-The Toolbox allows controlling the user interactions with the daigram:</p>
+The Toolbox allows controlling the user interactions with the diagram:</p>
 <table>
 <thead>
 <tr>
@@ -127,36 +127,45 @@ The Toolbox allows controlling the user interactions with the daigram:</p>
 <tbody>
 <tr>
 <td><img alt="" src="../img/bokeh_toolbox_pan.png" /></td>
-<td>Allows to pan</td>
+<td>Allows to pan the plot, for example, to center a cloud of points that you would like to zoom</td>
 </tr>
 <tr>
 <td><img alt="" src="../img/bokeh_toolbox_zoom_rect.png" /></td>
-<td>Allows to pan</td>
+<td>Allows to zoom into a rectangular area of the plot</td>
 </tr>
 <tr>
 <td><img alt="" src="../img/bokeh_toolbox_wheel_zoom.png" /></td>
-<td>Allows to pan</td>
+<td>Allows to zoom the center of the plot with your mouse wheel</td>
 </tr>
 <tr>
 <td><img alt="" src="../img/bokeh_toolbox_save.png" /></td>
-<td>Allows to pan</td>
+<td>Allows to save a plot to a file</td>
 </tr>
 <tr>
 <td><img alt="" src="../img/bokeh_toolbox_reset.png" /></td>
-<td>Allows to pan</td>
+<td>Undoes pan and zoom actions</td>
 </tr>
 <tr>
 <td><img alt="" src="../img/bokeh_toolbox_help.png" /></td>
-<td>Allows to pan</td>
+<td>Shows the bokeh help on this toolbox</td>
 </tr>
 <tr>
 <td><img alt="" src="../img/bokeh_toolbox_hover.png" /></td>
-<td>Allows to pan</td>
+<td>Enables and disables showing the tooltip when hovering over a point</td>
 </tr>
 </tbody>
 </table>
-<p><strong>4) Data:</strong></p>
-<p><strong>5) Download image:</strong></p>
+<p><strong>4) Data:</strong>
+Click on the <img alt="" src="../img/show_plot_piper03.png" /> icon expands the data area to show a table with data used in the plot. This table includes the calculated meq/L and meq% columns. If filters are used, only the filtered data is shown.
+<img alt="" src="../img/show_plot_piper05.png" /></p>
+<p><strong>5) ⚙️Settings:</strong>
+The settings box in the sidebar holds settings that influence rendering speed:</p>
+<ul>
+<li>Save Images: When active, each rendered image is written to a file and can be downloaded. A <img alt="" src="../img/show_plot_piper06.png" /> button appears below the Settings box. When pressed, all plots on the screen will be downloaded to your download folder. If the <code>plot-group-by</code> option is active, all plots will be zipped in a single zip file and downloaded.</li>
+<li>Show Data
+This toggles the visibility of the plot data. If the user is not currently interested in inspecting the plot data, hiding the table may speed up the plot updates.</li>
+<li>Auto Render Plots: When <em>Auto Render</em> is active, any change to a setting will trigger the rerendering of the plot or plots. Depending on the number of plots and data points, this may slow the process unnecessarily, and you prefer to first define all settings, then launch the rendering of the plot interactively by pressing the <img alt="" src="../img/show_plot_piper07.png" /> button. This button is only visible if the Auto-Render option is disabled.</li>
+</ul>
               
             </div>
           </div>

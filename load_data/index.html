@@ -109,9 +109,9 @@
             <div class="section">
               
                 <h1 id="load-data">Load Data</h1>
-<p>On this tab, the import settings for the demo dataset or for the uploaded data is shown and can be configured. By default the demo dataset is selected. If you want to explore the application using the demo dataset, no further action is required in this section. </p>
+<p>This tab includes the import settings By default the demo dataset and its configuration is loaded. If you want to explore the basic features of this application using the demo dataset, no further action should be required in this section. </p>
 <p><img alt="Load data" src="../img/load_data01.png" title="Load data" /></p>
-<p>The <code>Data</code>radio-button allows to set the datasource to an imported file. Once the <code>Upload dataset</code> option is selected, various import options and an upload fields become visible.</p>
+<p>The <code>Data</code>radio-button allows to set the datasource to an imported file. Once the <code>Upload dataset</code> option is selected, various import options and an upload fields become available.</p>
 <p><img alt="Load data options" src="../img/load_data02.png" title="Load data options" /></p>
 <table>
 <thead>
@@ -123,7 +123,7 @@
 <tbody>
 <tr>
 <td>Separator character</td>
-<td>character seperating 2 fields</td>
+<td>character separating 2 fields</td>
 </tr>
 <tr>
 <td>Encoding</td>
@@ -131,11 +131,11 @@
 </tr>
 <tr>
 <td>Upload csv file</td>
-<td>drag the file from your local disk to this field in order to upload the file</td>
+<td>drag the file from your local disk to this field to upload the file</td>
 </tr>
 </tbody>
 </table>
-<p>the <code>Preview Data</code> section shows the uploaded data. Use the <code>Download data as CSV</code> button below the table to download the file. This may be useful, if you want to download the demo dataset so you can use it as a template for format your own data before uploading it. For the current version, it is important to use the defined naming convention for your fields. </p>
+<p>The <code>Preview Data</code> section shows the uploaded data. Use the <code>Download data as CSV</code> button below this table to download the file. Typically, this is not useful since the table corresponds to the user's uploaded file. However, downloading the file may be helpful if the user wishes to download the demo dataset so he can reuse the file as a template for formatting data. For the current version, it is essential to use the naming convention for your fields for major ions, as shown below: </p>
 <table>
 <thead>
 <tr>
@@ -158,7 +158,7 @@
 </tr>
 <tr>
 <td>(K)</td>
-<td>Potassium in mg/L is not mandatory but if present, it will be added to the sodium concentration in the Piper diagram</td>
+<td>Potassium in mg/L is not mandatory, but if present, it will be added to the sodium ternary endpoint in the Piper diagram</td>
 </tr>
 <tr>
 <td>Cl</td>
@@ -174,42 +174,18 @@
 </tr>
 <tr>
 <td>(CO3)</td>
-<td>Carbonate concentration in mg/L is not mandatory but if found, it will be added to the bicarbonate concentration.</td>
+<td>Carbonate concentration in mg/L is not mandatory, but if found, it will be added to the bicarbonate ternary endpoint.</td>
 </tr>
 </tbody>
 </table>
-<p>The <code>Fields</code> section shows all fields found in the uploaded data and the default settings, that the system determines after the import. You can redefine the following fields. </p>
-<table>
-<thead>
-<tr>
-<th>Fields</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Column name</td>
-<td>The column name is the name found in the imported file, it cannot be changed</td>
-</tr>
-<tr>
-<td>Label</td>
-<td>Label used in the plots and in tooltips. this will be more useful in future versions. The Piper plots uses fixed labels to label the ternary endpoints.</td>
-</tr>
-<tr>
-<td>Digits</td>
-<td>Number of digits for numeric parameters when shown in a tooltip.</td>
-</tr>
-<tr>
-<td>Map</td>
-<td>Columns may be mapped to system parameters, so the application understands the sgnificance of the data held in this column. Currently the following system parameters can be mapped: latitude, longitude, sample_date, ca, mg, k, cl, so4, hco3, co3, alk. Note that if you use these names as your column names in the uploaded file, the system will detect and map the paramters automatically.</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>Data type for this column: str, float, int, datetime. String parameters will appear in the interface as filters and you will also be able to use them for the legend in the plot.</td>
-</tr>
-</tbody>
-</table>
-<p>The <code>Generate time aggregation columns</code> only appears, if a parameter has been mapped as the <code>sample_date</code> parameter. If this is the case, you may add one or multiple time aggregation columns: <em>Year</em>, <em>Month</em>, <em>Season</em>. Teese fields can later be used for filtering or as the legend in a Piper plot. A simplified algorithm is used where December to February are assigned to Winter, March to May to spring, June to August to summer and September to November to fall. Note that for dtermining the season based on the sampling date, you should define the hemisphere of the project area. For the Southern hemisphere, the seasons will be assigned as follows: December to February: summer, March to May: fall, June to August: winter, September to November: fall. Do not use this options, if your data already includes year month or season columns.</p>
+<p>The <code>Fields</code> section shows all fields found in the uploaded data and the default settings, that the system determines after the import. You can redefine the following columns. </p>
+<p><strong>Column name</strong>: The column name is the name found in the imported file, it cannot be changed, unless the user updates the column name in the file and uploads it again. Column names must be unique and should not include spaces, brackets, hyphens etc. </p>
+<p><strong>Label</strong>: Label used in the plots and tooltips. Labels will be more useful in future versions. The Piper plots use fixed labels to label the ternary endpoints.</p>
+<p><strong>Digits</strong>: Default number of digits for numeric parameters when shown in a tooltip.</p>
+<p><strong>Map:</strong> Columns may be mapped to system parameters, so the application understands the significance of the data held in this column. Currently, the following system parameters can be mapped: latitude, longitude, sample_date, ca, mg, k, cl, so4, hco3, co3, alk. Note that if you use these as your column names in the uploaded file, the system will automatically detect and map the parameters.</p>
+<p><strong>Type:</strong> Data type for this column: str, float, int, DateTime. String parameters will be detected as group-by-parameters. Group-by-parameters are included in the GUI and can be used for filtering, for plot lgends and plot grouping.</p>
+<p>The <code>Generate time aggregation columns</code> only appear if a parameter is mapped as the <code>sample_date</code> parameter. If this is the case, you may add one or multiple time aggregation columns: <em>Year</em>, <em>Month</em>, <em>Season</em>. These fields can later be used for filtering or as the legend in a Piper plot. The application uses a simplified algorithm where December to February is assigned to Winter, March to May to spring, June to August to summer, and September to November to fall. Note that for determining the season based on the sampling date, you should define the hemisphere of the project area. For the Southern hemisphere, the seasons will be assigned as follows: December to February: summer; March to May: fall, June to August: winter, September to November: fall. Refrain from using this option if your uploaded data already includes the year, month, or season columns.</p>
+<p><img alt="Load data" src="../img/quickstart07.png" title="Load data" /></p>
 <p>Note that your data is not stored on the server. You will have to upload and configure your data for each new session. </p>
               
             </div>
