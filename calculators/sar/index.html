@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://share.streamlit.io/lcalmbach/st-piper/app.py/calculators/sar/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Irrigation Water Quality - Fontus</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Irrigation Water Quality";
+    var mkdocs_page_input_path = "calculators\\sar.md";
+    var mkdocs_page_url = "/lcalmbach/st-piper/app.py/calculators/sar/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Fontus</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../data/data/">Data</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Plots</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../plots/plots_intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../plots/piper/">Piper</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../plots/map/">Maps</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">analyses</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../analyses/intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../analyses/mann_kendall/">Mann Kendall</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Calculators</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../fmw_conversion/">Formula Weight Conversion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../fmw_calculation/">Formula Weight Calculation</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Irrigation Water Quality</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#sodium-adsorption-ratio-sar">Sodium Adsorption Ratio (SAR)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#residual-sodium-carbonate-rsc">Residual Sodium Carbonate (RSC)</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../saturation_index/">Saturation Index</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../quick_start/">Tutorial</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/">About Fontus</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../version_history/">Release notes</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Fontus</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Calculators &raquo;</li>
+        
+      
+    
+    <li>Irrigation Water Quality</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="irrigation-water-quality">Irrigation Water quality</h1>
+<p>The chemical composition of irrigation water plays a crucial role in determining its quality and suitability for use in agriculture. In particular, the sodium content of irrigation water can have a significant impact on soil and plant health. High levels of sodium in irrigation water can lead to soil dispersion, making it difficult for plants to absorb essential nutrients. Additionally, high sodium levels in the soil can reduce the water uptake capacity of the roots, leading to drought stress in plants. Excess sodium can also accumulate in the soil over time, making it unsuitable for growing crops. For these reasons, it is important to carefully monitor the sodium content of irrigation water and take appropriate measures to manage it, such as blending the water with other sources or using sodium removal treatments. (Source: OpenAI GPT-3, 2023). Fontus calculates the <em>Sodium Adsorption Ratio</em> (SAR) and <em>Residual Sodium Carbonate</em> (RSC), two indicators commonly used for irrigation water quality analysis.</p>
+<h2 id="sodium-adsorption-ratio-sar">Sodium Adsorption Ratio (SAR)</h2>
+<p>The Sodium adsorption ratio (SAR) is an irrigation water quality parameter used in the management of sodium-affected soils. It is an indicator of the suitability of water for use in agricultural irrigation, as determined from the concentrations of the main alkaline and earth alkaline cations present in the water. It is also a standard diagnostic parameter for the sodicity hazard of a soil, as determined from analysis of pore water extracted from the soil.[<a href="https://en.wikipedia.org/wiki/Sodium_adsorption_ratio">wikipedia</a>]. </p>
+<p>The formula for calculating the sodium adsorption ratio (SAR) is:
+$$
+SAR = \frac{[Na^+]}{\sqrt{\frac{1}{2}(Ca^{2+} + Mg^{2+})}}
+$$</p>
+<p>Fontus calculates the SAR value and classifies the value according to the following table published by the <a href="http://turf.okstate.edu/water-quality/sar-calculator">Oklahoma State University</a>. Other countries may use different delimitations of SAR class boundaries and management recommendations.</p>
+<table>
+<thead>
+<tr>
+<th>SAR</th>
+<th>Classification</th>
+<th>Management Considerations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;1</td>
+<td>Excellent</td>
+<td>None</td>
+</tr>
+<tr>
+<td>1-2</td>
+<td>Good</td>
+<td>Little concern, add pelletized gypsum periodically</td>
+</tr>
+<tr>
+<td>2-4</td>
+<td>Fair</td>
+<td>Aerify soil, sand topdress, apply pelletized gypsum, monitor soil salinity</td>
+</tr>
+<tr>
+<td>4-8</td>
+<td>Poor</td>
+<td>Aerify soil, sand topdress, apply pelletized gypsum, leach soil regularly, monitor soil salinity closely</td>
+</tr>
+<tr>
+<td>8-15</td>
+<td>Very Poor'</td>
+<td>Requires special attention; consult water quality specialist</td>
+</tr>
+<tr>
+<td>&gt;15</td>
+<td>Unacceptable</td>
+<td>Do not use</td>
+</tr>
+</tbody>
+</table>
+<p>The SAR calculator allows two different data input modes: 
+- Select a sample from the dataset (default)
+- Enter all concentrations manually</p>
+<p>The first option displays a list of samples from which the user can select. This list is only displayed if the dataset includes the required input parameters (Sodium, Calcium, and Magnesium). When a row is selected, the corresponding SAR result is calculated and shown below the table.
+<img alt="" src="../img/sar_01.png" />
+</br></br>
+- The second option requires manual input for Sodium, Calcium and Magnesium:</p>
+<p><img alt="" src="../img/sar_02.png" /></p>
+<p>The SAR has been combined with ta carboante satruation assessment ot produc an index refrerre to as the adjusted SAR (Adj. SAR) by Obwer, Ogata and Ticker 1968. It is defined as:</p>
+<p>$$
+adj.\ SAR = SAR · (1+(8.4-pH_c))
+$$</p>
+<p>where SAR is the SAR for irrigation water, 8.4 is the approximate pH of a non sodic saline soil in equilibrium with CaCO<sub>3</sub>, and pH<sub>C</sub> is the pH for which the inspected solution would be in equilibrium with calcite (J.W. Lloyd and J.A. Heathcote (1985). Fontus performs a PHREEQC simulation to calculate the equilibrium-pH.</p>
+<h2 id="residual-sodium-carbonate-rsc">Residual Sodium Carbonate (RSC)</h2>
+<p>The bicarbonate hazard is expressed by the residual sodium carbonate (RSC) where: 
+$$
+RSC = ([HCO_3 ^-] + [CO_3 ^2-]) - ([Ca^2+] + [Mg^2+])
+$$
+All units are in meq/L.</p>
+<p>According to J.W. Lloyd and J.A. Heathcote (1985), the classification of RSC is outlined as follows:</p>
+<table>
+<thead>
+<tr>
+<th>RSC (meq/L)</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;1.25</td>
+<td>Suitable</td>
+</tr>
+<tr>
+<td>1.25 - 2.5</td>
+<td>Marginal</td>
+</tr>
+<tr>
+<td>&gt; 2.5</td>
+<td>Not suitable</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../saturation_index/" class="btn btn-neutral float-right" title="Saturation Index">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../fmw_calculation/" class="btn btn-neutral" title="Formula Weight Calculation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../fmw_calculation/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../saturation_index/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

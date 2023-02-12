@@ -50,25 +50,50 @@
                     <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Docs</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../load_data/">Load Data</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../plot_settings/">Plot Settings</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../show_plot/">Show Plot</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../quick_start/">Quick Start</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../data/data/">Data</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Plots</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../plots/plots_intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../plots/piper/">Piper</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../plots/map/">Maps</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">analyses</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../analyses/intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../analyses/mann_kendall/">Mann Kendall</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Calculators</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../calculators/intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../calculators/fmw_conversion/">Formula Weight Conversion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../calculators/fmw_calculation/">Formula Weight Calculation</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../calculators/sar/">Irrigation Water Quality</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../calculators/saturation_index/">Saturation Index</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../quick_start/">Tutorial</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">About Fontus</a>
     <ul class="current">
     </ul>
                     </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../version_history/">Version history</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../version_history/">Release notes</a>
                     </li>
                 </ul>
       </div>
@@ -91,6 +116,10 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
+        
+          <li>About &raquo;</li>
+        
+      
     
     <li>About Fontus</li>
     <li class="wy-breadcrumbs-aside">
@@ -105,8 +134,16 @@
             <div class="section">
               
                 <h1 id="about-fontus">About Fontus</h1>
-<p>Fontus is written in Python and uses the framework <a href="https://discuss.streamlit.io/">Streamlit</a> and the graphics library <a href="https://docs.bokeh.org/">Bokeh</a>. The data file used in the tutorial originates from the sample data of <a href="https://github.com/jyangfsu/WQChartPy">WQChartPy</a>, an open-source Python package for producing most of the graphical diagrams for the visualization of water geochemistry data. As a Python package, WQChartPy requires some Python programming knowledge, whereas Fontus is an application. All Fontus code is available on <a href="https://github.com/lcalmbach/fontus">github</a> and can be reused under the specified license.</p>
-<p>Fontus will be extended with additional diagrams and analysis methods in future versions. </p>
+<p>Fontus is a powerful data analysis tool written in Python and utilizing state-of-the-art frameworks and libraries:</p>
+<ul>
+<li>Fontus uses <a href="https://streamlit.io/">Streamlit</a> as its web application framework to build the graphical user interface.</li>
+<li>The library <a href="https://docs.bokeh.org/">Bokeh</a> is used to generate most charts.</li>
+<li>The <a href="https://joss.theoj.org/papers/10.21105/joss.00565">chempy</a> library is used for atomic weights and parsing of chemical formulas.</li>
+<li><a href="https://github.com/mmhs013/pymannkendall">pymannkendall</a> is used to implement the Mann Kendall test to montonic trends in time series.</li>
+<li>The main <a href="https://data.bs.ch/explore/dataset/100067">demo dataset</a> is sourced from the opendata portal <a href="https://data.bs.ch/">data.bs</a>.</li>
+<li><a href="https://github.com/jyangfsu/WQChartPy">WQChartPy</a> is an open-source Python package for producing water quality charts in a jupyter notebook environment. Fontus has been inspired by its Piper diagram and uses an example dataset from its git repository.</li>
+</ul>
+<p>The code for Fontus is freely available on <a href="https://github.com/lcalmbach/fontus">GitHub</a> under a specified license and plans for further development and added diagrams and analysis methods are in the works.</p>
               
             </div>
           </div>
@@ -114,10 +151,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../version_history/" class="btn btn-neutral float-right" title="Version history">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../version_history/" class="btn btn-neutral float-right" title="Release notes">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../quick_start/" class="btn btn-neutral" title="Quick Start"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../quick_start/" class="btn btn-neutral" title="Tutorial"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -153,6 +190,7 @@
     <script>var base_url = '..';</script>
     <script src="../js/theme_extra.js" defer></script>
     <script src="../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
       <script src="../search/main.js" defer></script>
     <script defer>
         window.onload = function () {

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://share.streamlit.io/lcalmbach/st-piper/app.py/analyses/mann_kendall/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Mann Kendall - Fontus</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Mann Kendall";
+    var mkdocs_page_input_path = "analyses\\mann_kendall.md";
+    var mkdocs_page_url = "/lcalmbach/st-piper/app.py/analyses/mann_kendall/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Fontus</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../data/data/">Data</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Plots</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../plots/plots_intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../plots/piper/">Piper</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../plots/map/">Maps</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">analyses</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Mann Kendall</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#analysis-settings">Analysis Settings</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#running-a-mann-kendall-test">Running a Mann Kendall Test</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Calculators</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../calculators/intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../calculators/fmw_conversion/">Formula Weight Conversion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../calculators/fmw_calculation/">Formula Weight Calculation</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../calculators/sar/">Irrigation Water Quality</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../calculators/saturation_index/">Saturation Index</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../quick_start/">Tutorial</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/">About Fontus</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../version_history/">Release notes</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Fontus</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>analyses &raquo;</li>
+        
+      
+    
+    <li>Mann Kendall</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="mann-kendall-test">Mann Kendall Test</h1>
+<h2 id="introduction">Introduction</h2>
+<p>The Mann-Kendall (MK) trend analysis is a statistical method used to assess if there is a monotonic (increasing or decreasing) trend in a time series data. It is non-parametric, meaning it does not assume a specific distribution of the data, and can be applied to irregular or missing data. The test calculates a Kendall's tau statistic, which measures the strength and direction of the trend, and a p-value, which indicates the significance of the trend. The Mann-Kendall test is commonly used in fields such as hydrology, meteorology, and environmental science. </p>
+<p>The Mann-Kendall test is a hypothesis where the null hypothesis for this test is that there is no monotonic trend in the series. The alternate hypothesis is that a trend exists. This trend can be positive, negative, or non-null. A detailed introduction can be found on <a href="https://wikitia.com/wiki/Mann-Kendall_trend_test">wikitia</a></p>
+<h2 id="requirements">Requirements</h2>
+<p>The Mann Kendall test requires a date type column in the dataset. This columns must be mapped to the sample_date system parameter as discussed in the <a href="../../data/data/#fields-mapping">Data-Field Mapping section</a>. The dataset must also include at least one numeric variable.</p>
+<h2 id="analysis-settings">Analysis Settings</h2>
+<ul>
+<li>
+<p><strong>Group by parameter</strong>: An uploaded dataset may include various grouping parameters, which group the samples accourding to a specific property. The Mann-Kendall may be performed for each of these groups. The station is the most common group by parameter used for this purpose, but other parameters may be used in a special setting. For example, if all records originate from the same station and your dataset only include the date and corresponding value, the group by parameter may even be left empty.</p>
+</li>
+<li>
+<p><strong>Analysis Parameter</strong>: This is the numeric analysis, for which fontus performs the MK test.</p>
+</li>
+<li>
+<p><strong>Minimum Number of Points</strong>: The MK test accounts for the number of data points used in the test. The fewer points the hight the evidence for a trend result must be. However, you may set a limit of points. Stations that do not reach this threshold, will not be processed and can be hiddedn from the selection grid of stations. </p>
+</li>
+<li>
+<p><strong>Hide Samples with Unsufficient Points</strong>: Stations which do not attain the required minimum number of points as discussed above, can be hidden from the selection grid. This allows the user to focus on stations, that have sufficiently long time series.</p>
+</li>
+<li>
+<p><strong>Prediction Type</strong>: Fontus calculates a linear regression for every time series. This line may be used for value prediction. Two types available: Fpr the Predict time when the specified value is reached, a value must be specified. Typically this is the guideline value. For example, for nitrate, it may be the <a href="https://www.who.int/docs/default-source/wash-documents/wash-chemicals/nitrate-nitrite-background-document.pdf">WHO guideline</a> of 50 mg/L as nitrate ion (equivalent to 11 mg/L as Nitrate-nitrogen). Fontus calculates the date when the extrapolated regression line intersects this guideline value. The second estimate allows the user to select a year in the future and calculates the value reached for this date.</p>
+</li>
+<li>
+<p><strong>Time Series Plot Options</strong>: The Y-axis range can be set to constant values for all time series. Without this setting, the time series plot adjusts its y-axis range to the minimum and maximum value in the dataset. Using a constant y-axis range may prove helpful to render the plot output more comparable. For example, it is easier to spot low or high variability in two-time series if both plots share the same time y-axis range.</p>
+</li>
+</ul>
+<h2 id="running-a-mann-kendall-test">Running a Mann Kendall Test</h2>
+<p>To run the MK test, verify and adapt the system default settings and press on the <code>Show Analysis</code> tab. Fontus displays a selection grid with one row per unique value of the group-by-parameter (normally the station). When a record is selected, the following screen will show. Fontus shows calculated statistical values in a grid and plots the time series diagram to the right of this table. The calculated output includes the following values: </p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>station</td>
+<td>name of selected station</td>
+</tr>
+<tr>
+<td>count</td>
+<td>number of datapoints</td>
+</tr>
+<tr>
+<td>trend</td>
+<td>trend result: increasing, decreasing, no trend</td>
+</tr>
+<tr>
+<td>p</td>
+<td>probablilty value of</td>
+</tr>
+<tr>
+<td>tau</td>
+<td>Kendall Tau, measure for the correlation between 2 parameters</td>
+</tr>
+<tr>
+<td>s</td>
+<td>Mann-Kendal’s score,</td>
+</tr>
+<tr>
+<td>sen_slope</td>
+<td>median slope for the connecting lines  in the time series</td>
+</tr>
+<tr>
+<td>sen intercept</td>
+<td>intercept for sens line</td>
+</tr>
+<tr>
+<td>regr intercept</td>
+<td>intercept for linear regression line</td>
+</tr>
+<tr>
+<td>regr_slope</td>
+<td>slope of linear regression line</td>
+</tr>
+<tr>
+<td>regr_rvalue</td>
+<td>correlation coefficient for linerar regression</td>
+</tr>
+</tbody>
+</table>
+<p>Below each MK output the data can be viewed by expanding the initially collapsed box names <code>View Values</code>. At the bottom of this box, a download button allows the user to download the data to a comma seperated text file.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../calculators/intro/" class="btn btn-neutral float-right" title="Introduction">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../intro/" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../intro/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../calculators/intro/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

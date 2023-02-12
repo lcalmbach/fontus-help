@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://share.streamlit.io/lcalmbach/st-piper/app.py/data/data/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Data - Fontus</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Data";
+    var mkdocs_page_input_path = "data\\data.md";
+    var mkdocs_page_url = "/lcalmbach/st-piper/app.py/data/data/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Fontus</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Data</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#upload">Upload</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#preview">Preview</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fields">Fields</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phreeqc-mapping">PHREEQC Mapping</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Plots</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../plots/plots_intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../plots/piper/">Piper</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../plots/map/">Maps</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">analyses</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../analyses/intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../analyses/mann_kendall/">Mann Kendall</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Calculators</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../calculators/intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../calculators/fmw_conversion/">Formula Weight Conversion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../calculators/fmw_calculation/">Formula Weight Calculation</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../calculators/sar/">Irrigation Water Quality</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../calculators/saturation_index/">Saturation Index</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../quick_start/">Tutorial</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/">About Fontus</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../version_history/">Release notes</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Fontus</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Data</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="data">Data</h1>
+<h2 id="introduction">Introduction</h2>
+<p>This menu allows users to view the demo dataset's metadata and upload and configure their own dataset. The configuration mainly consists of mapping fields of the dataset to system parameters used by Fontus for plotting or calculations. For example, to construct a piper diagram, Fontus needs to know which parameter represents the calcium, magnesium, sodium concentrations, etc. This section also includes the settings for PHREEQC, the geochemical modeling engine used for advanced calculations such as mineral saturation indices. Users must map each PHREEQC model input parameter to the corresponding field in the uploaded dataset.</p>
+<p>The radio buttons at the top of the form allow the user to select the built-in demo dataset or to upload a dataset. No further actions are required if the mode is set to demo dataset. However, you might browse the data in the data grid or inspect the data and fields.</p>
+<h2 id="upload">Upload</h2>
+<p>The <code>Datasource</code> radio-button allows the user to upload a file. Once the <code>Upload 
+Dataset</code> option is selected, various import options and an upload field become available.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Separator character</td>
+<td>character separating 2 fields</td>
+</tr>
+<tr>
+<td>Encoding</td>
+<td>file encoding</td>
+</tr>
+<tr>
+<td>Skip rows</td>
+<td>Number of rows containing header information that must be skipped. The </br>column names row must not be skipped</td>
+</tr>
+<tr>
+<td>Has ND Values</td>
+<td>If this checkbox is activated, the program detects columns storing non detect</br>values and extract the respective numerical values. Columns including non detects</br> must also be mapped to the numerica data type</td>
+</tr>
+<tr>
+<td>Upload csv File</td>
+<td>Drag the file from your local disk to this field to upload the file</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="../img/load_data02.png" /></p>
+<h3 id="preview">Preview</h3>
+<p>The <code>Preview Data File</code> section shows the uploaded data. Use the <code>Download data as CSV</code> button below this table to download the file. Typically, this is not useful since the table corresponds to the user's uploaded file. However, downloading the file may be helpful if the user wishes to download the demo dataset so he can reuse the file as a template for formatting data. </p>
+<h3 id="fields">Fields</h3>
+<p>For many analyses, Fontus needs to be aware of specific parameters such as temperature, pH, calcium, magnesium, etc. Therefore the user must map all column names of the imported file to the corresponding system parameters. The easiest way to achieve this goal is to use the naming convention for your fields, as shown below. Using these names in your column names allows Fontus to map most parameters automatically. If you prefer to keep your data file as is, it is still possible to map columns to system parameters, as explained in the section below.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ca</td>
+<td>Calcium concentration in mg/L</td>
+</tr>
+<tr>
+<td>Mg</td>
+<td>Magnesium concentration in mg/L</td>
+</tr>
+<tr>
+<td>Na</td>
+<td>Sodium concentration in mg/L</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Potassium in mg/L is not mandatory, but if present, it will be added to the sodium ternary endpoint in the Piper diagram</td>
+</tr>
+<tr>
+<td>Cl</td>
+<td>Chloride concentration in mg/L</td>
+</tr>
+<tr>
+<td>SO4</td>
+<td>Sulfate concentration in mg/L</td>
+</tr>
+<tr>
+<td>HCO3 or Alk</td>
+<td>Bicarbonate concentration in mg/L or alternatively alkalinity in mg/L CaCO3</td>
+</tr>
+<tr>
+<td>(CO3)</td>
+<td>Carbonate concentration in mg/L is not mandatory, but if found, it will be added to the bicarbonate ternary endpoint.</td>
+</tr>
+<tr>
+<td>pH</td>
+<td>Measured pH value</td>
+</tr>
+<tr>
+<td>temp</td>
+<td>measured water temperature</td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>Geographic longitude</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>Geographic latitude</td>
+</tr>
+<tr>
+<td>sample_date</td>
+<td>Sampling data, must be in the format <code>YYYY-MM-DD</code> or <code>YYYY-MM-DD mm:hh</code></td>
+</tr>
+<tr>
+<td>stationid</td>
+<td>unique identifier for the sampling location</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>Fields</code> section shows all fields found in the uploaded data and the default settings that the system determines after the import. The user may map columns to the respective system parameter where applicable. If parameter names match the ones mentioned in the list above, Fontus generates the mapping automatically.</p>
+<p><img alt="" src="../img/data_fields.png" /></p>
+<p><strong>Column</strong>: The column is the name found in the imported file; it cannot be changed unless the user updates the column name in the file and uploads it again. Column names must be unique and should not include spaces, brackets hyphens or any special characters. </p>
+<p><strong>Label</strong>: Label used in the plots and tooltips. For concentrations, the label usually holds a name of the constituent, for example Calcium.</p>
+<p><strong>Parameter Group</strong>: Assigning the parameter group to each field allows Fontus to generate an appropriate parameter options list to select from in various program sections. The following values are available:
+- station: a station parameter, typically elevation and coordinates.
+- sample: metadata pertaining to the sampling event such as sample date, sample number
+- observation: measured values such as concentrations, temperature, pH, etc. </p>
+<p><strong>System Field:</strong> Columns may be mapped to system parameters, so the application understands the meaning of the data in this column. The available system fields are listed in the table above. Note that if you use these as column names in the uploaded file, the system will automatically detect and map the parameters. If you use a different column name, for example, "total calcium" instead of "ca," you need to map your parameter manually. for system parameters, Fontus suggests a unit, which may be overwritten, if your dataset uses a different unit.</p>
+<p><strong>Data Type:</strong> Data type for this column: str, float, int, and date. Fontus will assign all String parameters as group-by-parameters. </p>
+<p><strong>Unit</strong> For parameters with data type float, a unit may be defined. For fields which have been mapped to a system parameter having an associated formula weight and valence, the unit is selected from a predfined selection list. These fields can be presented as different units in the program in the analysis. For all non mapped numeric parameters, the unit is a free-text field and the unit cannot be changed during analysis.</p>
+<p>Group-by-parameters are included in the GUI and can be used for filtering, plot legends, and plot grouping. If you want to suppress a column showing up as a filter field, set the respective parameter to "not mapped." the group by field type proves most advantageous for categorical values that can be used for filtering or as legends in plots.</p>
+<p><strong>Lookup Code</strong> For string parameters, Fontus shows a checkbox where the user may indicate whether the field's data is considered to be categorical. Categorical data consists of codes with a limited number of distinct values. Typical examples include geology, country, and county. Fields flagged as lookup lists can later be used as legends for plots and filters in plots and numerical analysis. By default, Fontus sets all string parameters as lookup codes. If a column of type string should not be used as a filter or as a plot legend, uncheck the checkbox.</p>
+<p>The <code>Generate Time Aggregation Columns</code> only appear if a parameter is mapped as the <code>sample_date</code> parameter. If this is the case, you may add one or multiple time aggregation columns: <em>Year</em>, <em>Month</em>, <em>Season</em>. These fields can later be used for filtering or as the legend in a Piper plot. The application uses a simplified algorithm where December to February is assigned to Winter, March to May to spring, June to August to summer, and September to November to fall. Note that for determining the season based on the sampling date, you should define the hemisphere of the project area. For the Southern hemisphere, Fontus will assign the seasons as follows: December to February: summer; March to May: fall, June to August: winter; and September to November: fall. Refrain from using this option if your uploaded data already includes the year, month, or season columns.</p>
+<p><strong>Hemisphere</strong>: To calculate the season expression from the sample date, users must select the hemisphere of the project location must. If the dataset includes coordinates, Fontus determines the hemisphere automatically, and the parameter becomes read-only.</p>
+<p><img alt="" src="../img/quickstart07.png" /></p>
+<p><strong>Apply button</strong>: Pressing the apply button will generate the time columns and activate any parameter mapping changes. If the user enabled the <code>Has ND (non detects) values</code> options in the header section of this form, columns containing non-detect values such as &lt;0.05 will be processed as follows:
+- a second table will be added having the postfix <em>nd</em>
+- Fontus sets all <em>nd</em> columns cells to true if the corresponding entry in the original column starts with a '&lt;' symbol, e.g., &lt;0.05. 
+- Fontus strips &lt; from the concentration values and replaces the value with its half. Fontus will convert &lt;0.05 to 0.025 in the example above. It also converts the columns from string to numeric to use the data in calculations and graphical representations.</p>
+<p>Note that your data is not stored on the server. You will have to upload and configure your data for each new session. </p>
+<h3 id="phreeqc-mapping">PHREEQC Mapping</h3>
+<p>PHREEQC is a computer program that is designed to perform a wide range of aqueous geochemical calculations. Fontus uses PHREEQC to perform various calculations. In order go send hydrochemical data to the PHREEQC engine, parameter need to be mapped. Some parameter such as major ions, have already been assinged to system parameter in the previous section and their assignment can be reused for the linking of dataset parameters to the PHREEQC master species. All PHREEQC relevant parameters are defined in this section.</p>
+<p><strong>Thermodynamic Database</strong> PHREEQC may be executed with various thermodynamic databases each one using a different selection of parameters and in some cases also different thermodynamic data for the same constituents. If you are not familiar with these databases, stick to the default database phreeqc.dat composed of a limited set of agreed upon data.</p>
+<p><strong>Default Unit</strong> Unit that will be used in cases, where manual concentration input is required such for the <code>Saturation Index Calculator</code>. </p>
+<p><strong>Master Species</strong> Verify, that every master species having an equivalent parameter in the dataset is mapped to this parameter.</p>
+<p><img alt="" src="../img/phreeqc_map_01.png" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../plots/plots_intro/" class="btn btn-neutral float-right" title="Introduction">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../.." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../plots/plots_intro/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

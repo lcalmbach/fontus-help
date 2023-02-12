@@ -54,23 +54,48 @@
     </ul>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Docs</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="load_data/">Load Data</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="plot_settings/">Plot Settings</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="show_plot/">Show Plot</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="quick_start/">Quick Start</a>
+                    <li class="toctree-l1"><a class="reference internal" href="data/data/">Data</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Plots</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="plots/plots_intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="plots/piper/">Piper</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="plots/map/">Maps</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">analyses</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="analyses/intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="analyses/mann_kendall/">Mann Kendall</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Calculators</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="calculators/intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="calculators/fmw_conversion/">Formula Weight Conversion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="calculators/fmw_calculation/">Formula Weight Calculation</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="calculators/sar/">Irrigation Water Quality</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="calculators/saturation_index/">Saturation Index</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="quick_start/">Tutorial</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="about/">About Fontus</a>
                     </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="version_history/">Version history</a>
+                    <li class="toctree-l1"><a class="reference internal" href="version_history/">Release notes</a>
                     </li>
                 </ul>
       </div>
@@ -108,9 +133,25 @@
               
                 <p><img alt="" src="img/water-2630618-wide.jpg" /></p>
 <h1 id="fontus">Fontus</h1>
-<h3 id="discover-your-water-quality-data">Discover your water quality data!</h3>
-<p>The <a href="https://en.wikipedia.org/wiki/Piper_diagram">Piper</a> plot is a standard visualization technique for the major ion composition of water analyses. Unfortunately, Piper diagrams cannot be constructed using standard graphics tools or libraries and therefore require specialized software. </p>
-<p>Fontus is an intuitive, easy-to-use open-source web application that allows you to create beautiful <a href="https://en.wikipedia.org/wiki/Piper_diagram">Piper</a> plots for free. Upload your water quality data with a simple drag and drop and start analyzing your data. Disover this App using the demo dataset or visit the <a href="quick_start/">quickstart</a> page of this documentation.</p>
+<h2 id="discover-your-water-quality-data">Discover your water quality data!</h2>
+<p>Fontus is an intuitive, easy-to-use open-source web application that allows you to apply various numerical and graphical analysis techniques to your data. Upload your water quality data with a simple drag and drop and start analyzing your data. The built in demo dataset is equipped with all features and serves as an excellent starting point for familiarizing yourself with Fontus before uploading your own data.</p>
+<p>Many calculations within Fontus are performed by the geochemical modeling software <a href="https://www.usgs.gov/software/phreeqc-version-3">PHREEQC</a>. PHREEQC is developed by the US Geological Survey (USGS) and is designed to perform a wide variety of aqueous geochemical calculations, including speciation, batch-reaction, one-dimensional reactive-transport, and inverse geochemical calculations.</p>
+<h1 id="gettings-started">Gettings started</h1>
+<p>Fontus consists of four modules. Each of the modules has several options depending on the uploaded data. Below the complete list of menu items is discussed; depending on your data, not all options may appear. For example, the field's longitude and latitude must be present for the map to become available. The demo dataset is set up to include all features and is an excellent place to start getting used to Fontus before loading your data.</p>
+<ul>
+<li>
+<p><strong>Data</strong>: this allows you to upload your data and map your fields to variables used by the system. The build in dataset includes groundwater water chemistry monitoring data from Basel/Switzerland. The original dataset is published on the <a href="https://data.bs.ch/explore/dataset/100067/">Open Data Portal</a> of Basel.</p>
+</li>
+<li>
+<p><strong>Plots</strong>: Allows to plot various plots commonly used to study water quality data. In the current version, Piper plots and maps are supported. </p>
+</li>
+<li>
+<p><strong>Analyses</strong>: Allows to apply of various numerical analyses commonly used in the study of water quality data. In the current version, the Mann-Kendall test is supported.</p>
+</li>
+<li>
+<p><strong>Calculators</strong>: Offers a set of calculators to perform standard calculations in water chemistry data. The current version supports formula weight conversion, sodium adsorption ratio calculation for irrigation water, formula weight calculations for minerals and the mineral Saturation Index claculation using PHREEQC.</p>
+</li>
+</ul>
               
             </div>
           </div>
@@ -118,7 +159,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="load_data/" class="btn btn-neutral float-right" title="Load Data">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="data/data/" class="btn btn-neutral float-right" title="Data">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
     </div>
@@ -146,13 +187,14 @@
     
     
     
-      <span><a href="load_data/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="data/data/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme_extra.js" defer></script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {
@@ -165,5 +207,5 @@
 
 <!--
 MkDocs version : 1.2.3
-Build Date UTC : 2022-12-31 11:00:48.469373+00:00
+Build Date UTC : 2023-02-12 14:41:14.895047+00:00
 -->

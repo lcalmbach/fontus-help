@@ -2,37 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/</loc>
-         <lastmod>2022-12-31</lastmod>
+         <lastmod>2023-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/about/</loc>
-         <lastmod>2022-12-31</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/load_data/</loc>
-         <lastmod>2022-12-31</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/plot_settings/</loc>
-         <lastmod>2022-12-31</lastmod>
+         <lastmod>2023-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/quick_start/</loc>
-         <lastmod>2022-12-31</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/show_plot/</loc>
-         <lastmod>2022-12-31</lastmod>
+         <lastmod>2023-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/version_history/</loc>
-         <lastmod>2022-12-31</lastmod>
+         <lastmod>2023-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/analyses/intro/</loc>
+         <lastmod>2023-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/analyses/mann_kendall/</loc>
+         <lastmod>2023-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/calculators/fmw_calculation/</loc>
+         <lastmod>2023-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/calculators/fmw_conversion/</loc>
+         <lastmod>2023-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/calculators/intro/</loc>
+         <lastmod>2023-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/calculators/sar/</loc>
+         <lastmod>2023-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/calculators/saturation_index/</loc>
+         <lastmod>2023-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/data/data/</loc>
+         <lastmod>2023-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/plots/map/</loc>
+         <lastmod>2023-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/plots/piper/</loc>
+         <lastmod>2023-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://share.streamlit.io/lcalmbach/st-piper/app.py/plots/plots_intro/</loc>
+         <lastmod>2023-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

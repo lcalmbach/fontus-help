@@ -9,7 +9,7 @@
   
   <link rel="canonical" href="https://share.streamlit.io/lcalmbach/st-piper/app.py/quick_start/">
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Quick Start - Fontus</title>
+  <title>Tutorial - Fontus</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Quick Start";
+    var mkdocs_page_name = "Tutorial";
     var mkdocs_page_input_path = "quick_start.md";
     var mkdocs_page_url = "/lcalmbach/st-piper/app.py/quick_start/";
   </script>
@@ -50,15 +50,41 @@
                     <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Docs</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../data/data/">Data</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Plots</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../plots/plots_intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../plots/piper/">Piper</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../plots/map/">Maps</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">analyses</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../analyses/intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../analyses/mann_kendall/">Mann Kendall</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Calculators</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../calculators/intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../calculators/fmw_conversion/">Formula Weight Conversion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../calculators/fmw_calculation/">Formula Weight Calculation</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../calculators/sar/">Irrigation Water Quality</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../calculators/saturation_index/">Saturation Index</a>
+                    </li>
+                </ul>
                 <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../load_data/">Load Data</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../plot_settings/">Plot Settings</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../show_plot/">Show Plot</a>
-                    </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Quick Start</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Tutorial</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#exploring-the-demo-dataset">Exploring the demo dataset</a>
         <ul>
@@ -73,12 +99,11 @@
     </ul>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../about/">About Fontus</a>
                     </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../version_history/">Version history</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../version_history/">Release notes</a>
                     </li>
                 </ul>
       </div>
@@ -101,12 +126,8 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
-        
-          <li>Docs &raquo;</li>
-        
-      
     
-    <li>Quick Start</li>
+    <li>Tutorial</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -140,7 +161,7 @@ After choosing your preferred format, you have to select the save images option 
 <p><img alt="" src="../img/quickstart06.png" /></p>
 <h3 id="use-of-markers">Use of Markers</h3>
 <p>Markers are commonly divided into different groups by applying different colors, sizes, and shapes. Use the <code>Group legend by</code> option to define which field will be used. Station, aquifer, sampling event, year, or season are typical candidates. In our demo dataset, there is only a single field available for grouping, the station field. However, Fontus allows the calculation of various time aggregation fields based on the sample_date field. In the <code>Load Data</code> tab, check the checkboxes Year column, Month column, and Season column. </p>
-<p><img alt="" src="../img/quickstart07.png" /></p>
+<p>![](./img/quickstart07.png</p>
 <p>This will generate the respective columns and add them to the imported data, and these fields become available for grouping or filtering the same way as the imported data does. For example by selecting the year field in the <code>Group Legend</code> by selectbox and also using {year} as the plot title, one plot per year with available data will be rendered.</p>
 <p><img alt="" src="../img/quickstart08.png" /></p>
 <p>To show different symbols for each year, set the <code>Group legend by</code> option to year. You may also define the markers. Fontus allows you to define a list of marker types as well as a color palette and the number of colors from this palette. There are three ways to automatically generate symbols.
@@ -176,7 +197,7 @@ Map the type as <code>None</code>. Also note that in the bottom section, you can
         <a href="../about/" class="btn btn-neutral float-right" title="About Fontus">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../show_plot/" class="btn btn-neutral" title="Show Plot"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../calculators/saturation_index/" class="btn btn-neutral" title="Saturation Index"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -202,7 +223,7 @@ Map the type as <code>None</code>. Also note that in the bottom section, you can
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../show_plot/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../calculators/saturation_index/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
@@ -212,6 +233,7 @@ Map the type as <code>None</code>. Also note that in the bottom section, you can
     <script>var base_url = '..';</script>
     <script src="../js/theme_extra.js" defer></script>
     <script src="../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
       <script src="../search/main.js" defer></script>
     <script defer>
         window.onload = function () {

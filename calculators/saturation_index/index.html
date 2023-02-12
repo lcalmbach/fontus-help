@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://share.streamlit.io/lcalmbach/st-piper/app.py/calculators/saturation_index/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Saturation Index - Fontus</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Saturation Index";
+    var mkdocs_page_input_path = "calculators\\saturation_index.md";
+    var mkdocs_page_url = "/lcalmbach/st-piper/app.py/calculators/saturation_index/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Fontus</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../data/data/">Data</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Plots</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../plots/plots_intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../plots/piper/">Piper</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../plots/map/">Maps</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">analyses</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../analyses/intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../analyses/mann_kendall/">Mann Kendall</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Calculators</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../intro/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../fmw_conversion/">Formula Weight Conversion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../fmw_calculation/">Formula Weight Calculation</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../sar/">Irrigation Water Quality</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Saturation Index</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#phreeqc-engine">PHREEQC Engine</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#calculator-input">Calculator Input</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#calculator-output">Calculator Output</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../quick_start/">Tutorial</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/">About Fontus</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../version_history/">Release notes</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Fontus</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Calculators &raquo;</li>
+        
+      
+    
+    <li>Saturation Index</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="saturation-index">Saturation index</h1>
+<h2 id="introduction">Introduction</h2>
+<p>The Mineral Saturation Index (SI) is a measure of the saturation state of an aqueous solution with respect to specific minerals. It is calculated by comparing the product of the ion activities of the ions that form a mineral, called the Ion Activity Product (IAP), with the solubility product constant (Ksp) of that mineral. If the IAP is equal to the Ksp, the solution is said to be at saturation with respect to that mineral, and the SI is equal to zero. If the IAP is less than the Ksp, the solution is undersaturated with respect to that mineral, and the SI is negative. Conversely, if the IAP is greater than the Ksp, the solution is supersaturated with respect to that mineral, and the SI is positive.</p>
+<p>The SI is an important concept in water quality and soil science, as it provides information on the potential for mineral precipitation or dissolution in a solution. For example, high SI values can indicate a potential for mineral precipitation, which can cause scaling or clogging of irrigation systems, while low SI values can indicate a potential for mineral dissolution, which can lead to soil degradation.</p>
+<p>By knowing the SI of a solution, water managers and soil scientists can make informed decisions about water quality and soil management, helping to maintain the long-term productivity and sustainability of soil and water resources(Source: OpenAI GPT-3, 2023).</p>
+<p>Fontus uses the geochemical modeling software PHREEQC for all SI calculations as outlined below.</p>
+<h2 id="phreeqc-engine">PHREEQC Engine</h2>
+<p>PHREEQC is a widely used geochemical modeling software for calculating mineral solubility. Fontus interfaces with PHREEQC by sending user-specified concentrations and minerals to the software, which then converts them into ion activities and calculates the Ion Activity Product (IAP). The IAP is compared to the temperature-dependent solubility product, and the resulting Mineral Saturation Index (SI) is returned to the graphical user interface. To ensure accurate results, it is important that the required parameters are included in the dataset and correctly mapped to the PHREEQC master species, as described in Chapter <a href="../../data/data/#phreeqc-mapping">PHRREEQC-Mapping</a> in the data manual.</p>
+<h2 id="calculator-input">Calculator Input</h2>
+<p>If the data source radio selection is set to the options  <code>Select sample from the dataset</code> a table is presented with all available samples. Upon selecting a record, Fontus shows the respective concentrations used as input in the PHREEQC model in the form below, where they may be altered or completed. For example, in the example below, no temperature data is available for the samples in the second and third row. However, the temperature is a required parameter for the solubility calculation and a default value of 25°C will be used by PHREEQC if not specfied otherwise. Since data is known from this station, filling in a estimated value, for example by by copying the temperure from a nearby well, will be closer to the actual water temperature and will provide a more realistic SI result.</p>
+<p><img alt="" src="../img/phreeqc_input.png" /></p>
+<h2 id="calculator-output">Calculator Output</h2>
+<p>"The output of the calculator is contingent upon the minerals that have been selected. If no minerals were chosen, Fontus will return saturation indices for all minerals that can be calculated based on the provided input. For instance, in order to calculate the SI of calcite, the solution must contain inputs for calcium, bicarbonate or alkalinity, and pH. If the user selects specific minerals, only their saturation indices will be displayed, given that the solution contains the necessary components for the calculation.</p>
+<p><img alt="" src="../img/phreeqc_output.png" /></p>
+<p>If the user selects <code>Enter data manually</code> as the datasource, the user must enter all concentrations and other required PHREEQC input parameters manually in the input form.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../quick_start/" class="btn btn-neutral float-right" title="Tutorial">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../sar/" class="btn btn-neutral" title="Irrigation Water Quality"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../sar/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../quick_start/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
