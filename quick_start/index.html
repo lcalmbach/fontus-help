@@ -9,7 +9,7 @@
   
   <link rel="canonical" href="https://share.streamlit.io/lcalmbach/st-piper/app.py/quick_start/">
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Tutorial - Fontus</title>
+  <title>Tutorial - Fontus 0.1.0</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -37,7 +37,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Fontus</a>
+        <a href=".." class="icon icon-home"> Fontus 0.1.0</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
       <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -115,7 +115,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Fontus</a>
+        <a href="..">Fontus 0.1.0</a>
       </nav>
 
       
@@ -142,13 +142,12 @@
                 <h1 id="quick-start">Quick Start</h1>
 <h2 id="exploring-the-demo-dataset">Exploring the demo dataset</h2>
 <p>The demo dataset includes 54 samples from the groundwater monitoring network of Basel (Switzerland). The raw data can be found on the city's <a href="https://data.bs.ch/explore/dataset/100067">Opendata portal</a>.</p>
-<p>Inspecting the table and fields in the <code>Load Data</code> section, you will note that the dataset includes a station-name, coordinates, sampling date and the major ions calcium magnesium, sodium, potassium, chloride, sulfate, bicarbonate, and carbonate. The data table has basic interactivity features: By hovering over the header cells, you can change the column width, and clicking on a header cell allows you to sort the table ascending and descending according to the values in this column. If you wish to inspect the data with your local editor or spreadsheet software, you can download the table by clicking the <code>Download data as CSV</code> button.</p>
-<p>To get an impression of the Piper diagram using the initial settings, navigate to the Show Plot section and press the Plot button above the Documentation link in the sidebar. You will see the following output:</p>
+<p>Inspecting the table and fields in the <code>Load Data</code> section, you will note that the dataset includes a station-name, coordinates, sampling date and the major ions calcium magnesium, sodium, potassium, chloride, sulfate, bicarbonate, and carbonate. The data table has basic interactivity features: By hovering over the header cells, you can change the column width, and clicking on a header cell allows you to sort the table ascending and descending according to the values in this column. If you wish to inspect the data with your locally installed editor or spreadsheet software, you can download the table by clicking the <code>Download data as CSV</code> button.</p>
+<p>To get an impression of the Piper diagram using the initial settings, navigate to the <code>Show Plot</code> section and press the <code>Plot</code> button above the Documentation link in the sidebar. You will see the following output:</p>
 <p><img alt="" src="../img/quickstart01.png" /></p>
 <p>Hovering over the markers in the plot will display a tooltip with the values for this sample. </p>
 <p><img alt="" src="../img/quickstart02.png" /></p>
-<p>This technique becomes difficult for markers, which are closely grouped or overlapping. In this case, the zoom tool becomes handy: 
-Activate the <img alt="" src="../img/bokeh_toolbox_zoom_rect.png" /> icon in the toolbar to the right of the plot, then zoom into a section with overlapping symbols. In the resulting blow-up plot it is easy to select a single marker to verify the respective composition. To restore the original setting, press on the <img alt="" src="../img/bokeh_toolbox_reset.png" /> icon in the plots toolbox.</p>
+<p>"Interacting with closely grouped or overlapping data points can be challenging. Fortunately, the zoom tool comes in handy in such situations. To use it, simply activate the zoom icon <img alt="" src="../img/bokeh_toolbox_zoom_rect.png" /> in the toolbar located to the right of the plot. Then, zoom in on the section with overlapping symbols. This will result in an enlarged plot where it is much easier to select and view individual markers and their respective compositions. To restore the original setting, press on the <img alt="" src="../img/bokeh_toolbox_reset.png" /> icon in the plots toolbox.</p>
 <p><img alt="" src="../img/quickstart03.png" /></p>
 <h3 id="group-by-plot-option">Group by Plot Option</h3>
 <p>To inspect analyses from a single station one by one, proceed as follows:
@@ -162,12 +161,12 @@ After choosing your preferred format, you have to select the save images option 
 <h3 id="use-of-markers">Use of Markers</h3>
 <p>Markers are commonly divided into different groups by applying different colors, sizes, and shapes. Use the <code>Group legend by</code> option to define which field will be used. Station, aquifer, sampling event, year, or season are typical candidates. In our demo dataset, there is only a single field available for grouping, the station field. However, Fontus allows the calculation of various time aggregation fields based on the sample_date field. In the <code>Load Data</code> tab, check the checkboxes Year column, Month column, and Season column. </p>
 <p>![](./img/quickstart07.png</p>
-<p>This will generate the respective columns and add them to the imported data, and these fields become available for grouping or filtering the same way as the imported data does. For example by selecting the year field in the <code>Group Legend</code> by selectbox and also using {year} as the plot title, one plot per year with available data will be rendered.</p>
+<p>The process of generating the columns will result in the addition of these fields to the imported data, making them accessible for grouping or filtering just like the imported data. For instance, you can select the year field in the Group Legend's selectbox and use {year} as the plot title to produce a separate plot for each year with available data.</p>
 <p><img alt="" src="../img/quickstart08.png" /></p>
-<p>To show different symbols for each year, set the <code>Group legend by</code> option to year. You may also define the markers. Fontus allows you to define a list of marker types as well as a color palette and the number of colors from this palette. There are three ways to automatically generate symbols.
-- Option 1 will cycle through symbol types first, then through the colors. Therefore the first marker will be a blue square, a blue circle, then a light blue square and a light blue circle, and so on until there are no new codes for which markers must be generated. The result is shown below.
+<p>To show different symbols for each year, set the <code>Group legend by</code> option to year. You may also define the markers. Fontus allows you to define a list of marker types, a color palette, and the number of colors from this palette. There are three ways to generate symbols automatically.
+- Option 1 will cycle through symbol types first, then through the colors. Therefore the first marker will be a blue square, a blue circle, then a light blue square and a light blue circle, and so on, until there are no new codes for which markers must be generated. The result is shown below.
 - Option 2 will cycle through colors first while holding the symbol constant. Once all colors have been used, the second marker type will be used, etc.
-- Option 3 moves through symbols and colors simultaneously. Make sure that you have defined the same number of colors and symbols. This option is useful if you know the number of markers needed and this number is not larger than the list of defined symbol types and colors, as once markers have cycled through all colors, the same combination of type and color will be generated again. </p>
+- Option 3 moves through symbols and colors simultaneously. Make sure that you have defined the same number of colors and symbols. This option is helpful if you know the number of markers needed. This number is not more significant than the list of defined symbol types and colors, as once markers have cycled through all colors, the same combination of type and color will be generated again. </p>
 <p><img alt="" src="../img/quickstart09.png" /></p>
 <h2 id="upload-your-own-data">Upload your own Data</h2>
 <p>This chapter explains the steps for uploading and exploring your own dataset, which is the standard way of using this software once you know your way around. The current example uses a dataset from Liu et al and can be downloaded directly from https://lcalmbach.github.io/fontus-help/data/data_Liu_et_al_2021.csv, or from its original location https://github.com/jyangfsu/WQChartPy/blob/main/data/data_Liu_et_al_2021.csv. Store the file locally on your disk.</p>
